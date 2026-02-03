@@ -11,7 +11,10 @@ variable "cloudflare_preview_config" {
     }))
     fail_open = bool
   })
-  default = {}
+  default = {
+    env_vars  = {}
+    fail_open = false
+  }
 }
 
 variable "cloudflare_production_config" {
@@ -23,7 +26,10 @@ variable "cloudflare_production_config" {
     }))
     fail_open = bool
   })
-  default = {}
+  default = {
+    env_vars  = {}
+    fail_open = false
+  }
 }
 
 variable "cloudflare_production_branch" {
