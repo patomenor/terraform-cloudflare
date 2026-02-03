@@ -2,14 +2,28 @@ variable "cloudflare_account_id" {
   type = string
 }
 
-variable "cloudflare_preview_fail_open" {
-  type    = bool
-  default = false
+variable "cloudflare_preview_config" {
+  description = "Configuração do ambiente de produção"
+  type = object({
+    env_vars = map(object({
+      type  = string
+      value = string
+    }))
+    fail_open = bool
+  })
+  default = {}
 }
 
-variable "cloudflare_production_fail_open" {
-  type    = bool
-  default = false
+variable "cloudflare_production_config" {
+  description = "Configuração do ambiente de produção"
+  type = object({
+    env_vars = map(object({
+      type  = string
+      value = string
+    }))
+    fail_open = bool
+  })
+  default = {}
 }
 
 variable "cloudflare_production_branch" {

@@ -4,24 +4,8 @@ resource "cloudflare_pages_project" "main" {
   production_branch = var.cloudflare_production_branch
 
   deployment_configs = {
-    preview = {
-      env_vars = {
-        CFP_PASSWORD = {
-          type  = "plain_text"
-          value = "hello"
-        }
-      }
-      fail_open = var.cloudflare_preview_fail_open
-    }
-    production = {
-      env_vars = {
-        CFP_PASSWORD = {
-          type  = "plain_text"
-          value = "hello"
-        }
-      }
-      fail_open = var.cloudflare_production_fail_open
-    }
+    preview    = var.cloudflare_preview_config
+    production = var.cloudflare_production_config
   }
 
   lifecycle {
