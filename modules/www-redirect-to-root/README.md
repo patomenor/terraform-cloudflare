@@ -19,3 +19,14 @@ Above few configuration to generate token with only required permissions and use
 - cloudflare-list.tf
 - cloudflare-record-a.tf
 - cloudflare-record-aaaa.tf
+
+### Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| `cloudflare_account_id` | Account ID in Cloudflare | `string` | n/a | yes |
+| `cloudflare_zone_id` | Zone ID in Cloudflare | `string` | n/a | yes |
+| `domain` | Apex domain | `string` | n/a | yes |
+| `rules` | Lista de regras adicionais para adicionar ao ruleset (mescladas com a regra padrão) | `any` | `[]` | no |
+| `ruleset` | Alias para `rules` | `any` | `[]` | no |
+
