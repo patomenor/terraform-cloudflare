@@ -1,3 +1,4 @@
 output "token" {
-  value = cloudflare_api_token.main.value
+  value     = cloudflare_api_token.main.value
+  sensitive = true
 }
